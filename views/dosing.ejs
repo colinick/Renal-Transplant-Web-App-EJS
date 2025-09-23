@@ -1,0 +1,51 @@
+<%- include("partials/_header") %>
+  <section>
+    <h2>Dosing Helper (Demo)</h2>
+    <p class="muted">Non-clinical educational tool. Always consult qualified professionals.</p>
+
+    <% if (errors.length) { %>
+      <div class="alert">
+        <strong>Please fix the following:</strong>
+        <ul>
+          <% errors.forEach(e => { %><li><%= e %></li><% }) %>
+        </ul>
+      </div>
+    <% } %>
+
+    <form method="POST" action="/dosing" class="card">
+      <label>
+        Drug
+        <select name="drug" required>
+          <option value="">-- select --</option>
+          <option value="tacrolimus">Tacrolimus</option>
+          <option value="cyclosporin">Cyclosporin</option>
+          <option value="mycophenolate">Mycophenolate</option>
+        </select>
+      </label>
+
+      <label>
+        Weight (kg)
+        <input type="number" name="weightKg" step="0.1" min="1" required />
+      </label>
+
+      <label>
+        Serum Creatinine (µmol/L)
+        <input type="number" name="creatinineUmolL" step="1" min="1" required />
+      </label>
+
+      <label>
+        Trough Level (ng/mL)
+        <input type="number" name="troughLevelNgmL" step="0.1" min="0" required />
+      </label>
+
+      <button class="btn" type="submit">Get Educational Suggestion</button>
+    </form>
+
+    <% if (result) { %>
+      <div class="result card">
+        <h3>Result</h3>
+        <p><%= result %></p>
+      </div>
+    <% } %>
+  </section>
+<%- include("partials/_footer") %>
