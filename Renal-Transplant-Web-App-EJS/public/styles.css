@@ -1,0 +1,18 @@
+:root { --fg:#222; --bg:#fff; --muted:#666; --brand:#2d6cdf; --card:#f6f8fb; --alert:#ffe5e5; }
+* { box-sizing: border-box; }
+html, body { margin:0; padding:0; font-family: system-ui, Segoe UI, Roboto, Arial, sans-serif; color:var(--fg); background:var(--bg); }
+.container { max-width: 880px; margin: 0 auto; padding: 16px; }
+.header { display:flex; align-items: center; justify-content: space-between; gap:16px; }
+.header h1 { font-size: 1.25rem; margin:0; }
+.header nav a { margin-right: 12px; text-decoration: none; color: var(--brand); }
+.header nav a:last-child { margin-right: 0; }
+h2 { margin-top: 0; }
+.muted { color: var(--muted); font-size: 0.95rem; }
+.btn { display:inline-block; padding:10px 14px; background:var(--brand); color:#fff; border-radius:8px; text-decoration:none; border:none; cursor:pointer; }
+.btn:hover { opacity:.9; }
+.card { background: var(--card); padding: 16px; border-radius: 10px; margin-top: 16px; }
+label { display:block; margin: 10px 0; }
+input, select { width:100%; padding:10px; border:1px solid #ccc; border-radius:8px; }
+.alert { background: var(--alert); padding: 12px; border-radius: 8px; }
+.footer { color: var(--muted); font-size: 0.9rem; }
+.result p { margin:0; }
